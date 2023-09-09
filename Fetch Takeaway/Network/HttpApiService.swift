@@ -75,11 +75,12 @@ private extension HttpApiService {
 extension HttpApiService {
     /// Perform `GET` requests
     /// - Parameter `get`: Endpoint to which you want request
-    func perform(
+    func perform<M: Decodable>(
         get request: Request
-    ) async throws {
+    ) async throws -> M {
         guard let url = request.getEndpoint() else { throw GeneralisedError.notFound }
-        let result: Meals = try await consume(request: createRequest(for: url, httpMethod: "GET"))
+        let result: M = try await consume(request: createRequest(for: url, httpMethod: "GET"))
+        return result
     }
     
     /// Will create a url request for consumtion

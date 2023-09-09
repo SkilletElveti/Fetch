@@ -11,7 +11,9 @@ import SwiftUI
 struct Fetch_TakeawayApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MealListView()
+            }
         }
     }
 }

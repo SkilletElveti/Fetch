@@ -15,6 +15,7 @@ enum Constants: String {
     case apiPath = "/api/json/v1/1/"
     case apiFilterIdentifier = "filter.php"
     case apiLookupIdentifier = "lookup.php"
+    case MealsViewTitle = "Meals"
 }
 
 
