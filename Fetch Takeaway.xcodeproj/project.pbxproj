@@ -14,6 +14,13 @@
 		883945762AACE1DE001FAEA8 /* Fetch_TakeawayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945752AACE1DE001FAEA8 /* Fetch_TakeawayTests.swift */; };
 		883945802AACE1DE001FAEA8 /* Fetch_TakeawayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839457F2AACE1DE001FAEA8 /* Fetch_TakeawayUITests.swift */; };
 		883945822AACE1DE001FAEA8 /* Fetch_TakeawayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945812AACE1DE001FAEA8 /* Fetch_TakeawayUITestsLaunchTests.swift */; };
+		883945902AACE292001FAEA8 /* HttpApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839458F2AACE292001FAEA8 /* HttpApiService.swift */; };
+		883945932AACE3EB001FAEA8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 883945922AACE3EB001FAEA8 /* Reachability */; };
+		883945962AACE6DE001FAEA8 /* GeneralisedErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945952AACE6DD001FAEA8 /* GeneralisedErrors.swift */; };
+		883945982AACE8E7001FAEA8 /* GeneralisedLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945972AACE8E7001FAEA8 /* GeneralisedLogger.swift */; };
+		8839459A2AACED04001FAEA8 /* GeneralisedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945992AACED04001FAEA8 /* GeneralisedConstants.swift */; };
+		8839459C2AACF9BC001FAEA8 /* GeneralisedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839459B2AACF9BC001FAEA8 /* GeneralisedRequest.swift */; };
+		8839459F2AAD0D7F001FAEA8 /* MealsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839459E2AAD0D7F001FAEA8 /* MealsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,12 @@
 		8839457B2AACE1DE001FAEA8 /* Fetch TakeawayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch TakeawayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8839457F2AACE1DE001FAEA8 /* Fetch_TakeawayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_TakeawayUITests.swift; sourceTree = "<group>"; };
 		883945812AACE1DE001FAEA8 /* Fetch_TakeawayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_TakeawayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8839458F2AACE292001FAEA8 /* HttpApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpApiService.swift; sourceTree = "<group>"; };
+		883945952AACE6DD001FAEA8 /* GeneralisedErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralisedErrors.swift; sourceTree = "<group>"; };
+		883945972AACE8E7001FAEA8 /* GeneralisedLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralisedLogger.swift; sourceTree = "<group>"; };
+		883945992AACED04001FAEA8 /* GeneralisedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralisedConstants.swift; sourceTree = "<group>"; };
+		8839459B2AACF9BC001FAEA8 /* GeneralisedRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralisedRequest.swift; sourceTree = "<group>"; };
+		8839459E2AAD0D7F001FAEA8 /* MealsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883945932AACE3EB001FAEA8 /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +108,11 @@
 		883945632AACE1DD001FAEA8 /* Fetch Takeaway */ = {
 			isa = PBXGroup;
 			children = (
+				883945A02AAD1AE6001FAEA8 /* Views */,
+				8839459D2AAD0D71001FAEA8 /* Models */,
+				883945942AACE6B7001FAEA8 /* Generalised  */,
+				8839458E2AACE21D001FAEA8 /* Network */,
 				883945642AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift */,
-				883945662AACE1DD001FAEA8 /* ContentView.swift */,
 				883945682AACE1DE001FAEA8 /* Assets.xcassets */,
 				8839456A2AACE1DE001FAEA8 /* Preview Content */,
 			);
@@ -127,6 +144,49 @@
 			path = "Fetch TakeawayUITests";
 			sourceTree = "<group>";
 		};
+		8839458E2AACE21D001FAEA8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8839458F2AACE292001FAEA8 /* HttpApiService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		883945942AACE6B7001FAEA8 /* Generalised  */ = {
+			isa = PBXGroup;
+			children = (
+				883945952AACE6DD001FAEA8 /* GeneralisedErrors.swift */,
+				883945972AACE8E7001FAEA8 /* GeneralisedLogger.swift */,
+				883945992AACED04001FAEA8 /* GeneralisedConstants.swift */,
+				8839459B2AACF9BC001FAEA8 /* GeneralisedRequest.swift */,
+			);
+			path = "Generalised ";
+			sourceTree = "<group>";
+		};
+		8839459D2AAD0D71001FAEA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8839459E2AAD0D7F001FAEA8 /* MealsList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		883945A02AAD1AE6001FAEA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				883945A12AAD1BA6001FAEA8 /* MealListingView */,
+				883945662AACE1DD001FAEA8 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		883945A12AAD1BA6001FAEA8 /* MealListingView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MealListingView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +203,9 @@
 			dependencies = (
 			);
 			name = "Fetch Takeaway";
+			packageProductDependencies = (
+				883945922AACE3EB001FAEA8 /* Reachability */,
+			);
 			productName = "Fetch Takeaway";
 			productReference = 883945612AACE1DD001FAEA8 /* Fetch Takeaway.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +278,9 @@
 				Base,
 			);
 			mainGroup = 883945582AACE1DD001FAEA8;
+			packageReferences = (
+				883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */,
+			);
 			productRefGroup = 883945622AACE1DD001FAEA8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +323,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8839459F2AAD0D7F001FAEA8 /* MealsList.swift in Sources */,
+				883945902AACE292001FAEA8 /* HttpApiService.swift in Sources */,
+				8839459A2AACED04001FAEA8 /* GeneralisedConstants.swift in Sources */,
 				883945672AACE1DD001FAEA8 /* ContentView.swift in Sources */,
+				883945982AACE8E7001FAEA8 /* GeneralisedLogger.swift in Sources */,
+				883945962AACE6DE001FAEA8 /* GeneralisedErrors.swift in Sources */,
+				8839459C2AACF9BC001FAEA8 /* GeneralisedRequest.swift in Sources */,
 				883945652AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		883945922AACE3EB001FAEA8 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 883945592AACE1DD001FAEA8 /* Project object */;
 }

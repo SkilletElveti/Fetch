@@ -16,6 +16,16 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onAppear(perform: {
+            Task {
+                do {
+                    try await HttpApiService.shared.perform(get: .meals("Dessert"))
+                } catch {
+                    GeneralisedLogger.log(error: "Error: \(error)")
+                }
+                
+            }
+        })
     }
 }
 
