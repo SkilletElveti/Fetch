@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
-
+import YouTubePlayerKit
 struct MealDetailView: View {
     @EnvironmentObject
     var viewModel: MealDetailViewModel
     var body: some View {
-        Text("Meal Detail id: \(viewModel.state.mealId ?? "0")")
+        content
+            .onAppear {
+                Task {
+                    try await viewModel.fetchMealDetail()
+                }
+            }
+    }
+    
+    @ViewBuilder
+    var content: some View {
+        if let detail = viewModel.state.mealDetail {
+            Text("Data Parsed")
+        }
     }
 }
 

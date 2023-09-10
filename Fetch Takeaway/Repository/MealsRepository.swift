@@ -14,6 +14,7 @@ class MealsRepository: ObservableObject {
         guard meals[identifier] == nil else { return meals[identifier, default: []] }
         switch try await MealsUseCase.get(mealName: identifier) {
         case .Success(let result):
+            
             meals[identifier, default: []] = result.meals ?? []
             return result.meals ?? []
         case .Failure:

@@ -33,6 +33,10 @@
 		883945C12AAE70A0001FAEA8 /* MealDetailLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C02AAE70A0001FAEA8 /* MealDetailLink.swift */; };
 		883945C42AAE717B001FAEA8 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C32AAE717B001FAEA8 /* MealDetailView.swift */; };
 		883945C62AAE718E001FAEA8 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C52AAE718E001FAEA8 /* MealDetailViewModel.swift */; };
+		883945C82AAE7642001FAEA8 /* MealLookupUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C72AAE7642001FAEA8 /* MealLookupUseCase.swift */; };
+		883945CA2AAE781F001FAEA8 /* MealDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C92AAE781F001FAEA8 /* MealDetailInfo.swift */; };
+		883945CC2AAE7999001FAEA8 /* MealLookupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945CB2AAE7999001FAEA8 /* MealLookupRepository.swift */; };
+		883945D12AAE7D09001FAEA8 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 883945D02AAE7D09001FAEA8 /* YouTubePlayerKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,9 @@
 		883945C02AAE70A0001FAEA8 /* MealDetailLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailLink.swift; sourceTree = "<group>"; };
 		883945C32AAE717B001FAEA8 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		883945C52AAE718E001FAEA8 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
+		883945C72AAE7642001FAEA8 /* MealLookupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLookupUseCase.swift; sourceTree = "<group>"; };
+		883945C92AAE781F001FAEA8 /* MealDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailInfo.swift; sourceTree = "<group>"; };
+		883945CB2AAE7999001FAEA8 /* MealLookupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLookupRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +93,7 @@
 			files = (
 				883945932AACE3EB001FAEA8 /* Reachability in Frameworks */,
 				883945B42AAE60E4001FAEA8 /* Nuke in Frameworks */,
+				883945D12AAE7D09001FAEA8 /* YouTubePlayerKit in Frameworks */,
 				883945BA2AAE60E4001FAEA8 /* NukeVideo in Frameworks */,
 				883945B62AAE60E4001FAEA8 /* NukeExtensions in Frameworks */,
 				883945B82AAE60E4001FAEA8 /* NukeUI in Frameworks */,
@@ -193,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				8839459E2AAD0D7F001FAEA8 /* MealsList.swift */,
+				883945C92AAE781F001FAEA8 /* MealDetailInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				883945A92AAD241E001FAEA8 /* MealsUseCase.swift */,
+				883945C72AAE7642001FAEA8 /* MealLookupUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -227,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				883945AD2AAD2611001FAEA8 /* MealsRepository.swift */,
+				883945CB2AAE7999001FAEA8 /* MealLookupRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -252,8 +263,8 @@
 		883945BC2AAE6FB6001FAEA8 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				883945BF2AAE708C001FAEA8 /* Navlinks */,
 				883945BD2AAE6FDF001FAEA8 /* NavigationStackService.swift */,
+				883945BF2AAE708C001FAEA8 /* Navlinks */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -297,6 +308,7 @@
 				883945B52AAE60E4001FAEA8 /* NukeExtensions */,
 				883945B72AAE60E4001FAEA8 /* NukeUI */,
 				883945B92AAE60E4001FAEA8 /* NukeVideo */,
+				883945D02AAE7D09001FAEA8 /* YouTubePlayerKit */,
 			);
 			productName = "Fetch Takeaway";
 			productReference = 883945612AACE1DD001FAEA8 /* Fetch Takeaway.app */;
@@ -373,6 +385,7 @@
 			packageReferences = (
 				883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */,
 				883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */,
+				883945CF2AAE7D09001FAEA8 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			productRefGroup = 883945622AACE1DD001FAEA8 /* Products */;
 			projectDirPath = "";
@@ -416,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883945CC2AAE7999001FAEA8 /* MealLookupRepository.swift in Sources */,
 				8839459F2AAD0D7F001FAEA8 /* MealsList.swift in Sources */,
 				883945902AACE292001FAEA8 /* HttpApiService.swift in Sources */,
 				883945C62AAE718E001FAEA8 /* MealDetailViewModel.swift in Sources */,
@@ -427,7 +441,9 @@
 				883945BE2AAE6FDF001FAEA8 /* NavigationStackService.swift in Sources */,
 				8839459C2AACF9BC001FAEA8 /* GeneralisedRequest.swift in Sources */,
 				883945652AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift in Sources */,
+				883945CA2AAE781F001FAEA8 /* MealDetailInfo.swift in Sources */,
 				883945AA2AAD241E001FAEA8 /* MealsUseCase.swift in Sources */,
+				883945C82AAE7642001FAEA8 /* MealLookupUseCase.swift in Sources */,
 				883945A52AAD1BF7001FAEA8 /* MealListView.swift in Sources */,
 				883945AE2AAD2611001FAEA8 /* MealsRepository.swift in Sources */,
 				883945A72AAD1C09001FAEA8 /* MealListViewModel.swift in Sources */,
@@ -774,6 +790,14 @@
 				minimumVersion = 12.0.0;
 			};
 		};
+		883945CF2AAE7D09001FAEA8 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -801,6 +825,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = NukeVideo;
+		};
+		883945D02AAE7D09001FAEA8 /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 883945CF2AAE7D09001FAEA8 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
