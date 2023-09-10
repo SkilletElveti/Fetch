@@ -30,6 +30,9 @@ class MealListViewModel: ObservableObject {
     }
     
     func _redirectTo(meal identifier: String) async throws {
+        NavigationStackService.shared.navigation(
+            push: MealDetailLink(mealId: identifier, viewModel: MealDetailViewModel(mealID: identifier))
+        )
         GeneralisedLogger.log(
             message: "Redirecting to meal details: \(identifier)", filter: "MealListViewModel"
         )

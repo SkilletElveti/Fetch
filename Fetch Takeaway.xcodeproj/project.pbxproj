@@ -29,6 +29,10 @@
 		883945B62AAE60E4001FAEA8 /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 883945B52AAE60E4001FAEA8 /* NukeExtensions */; };
 		883945B82AAE60E4001FAEA8 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 883945B72AAE60E4001FAEA8 /* NukeUI */; };
 		883945BA2AAE60E4001FAEA8 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = 883945B92AAE60E4001FAEA8 /* NukeVideo */; };
+		883945BE2AAE6FDF001FAEA8 /* NavigationStackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945BD2AAE6FDF001FAEA8 /* NavigationStackService.swift */; };
+		883945C12AAE70A0001FAEA8 /* MealDetailLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C02AAE70A0001FAEA8 /* MealDetailLink.swift */; };
+		883945C42AAE717B001FAEA8 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C32AAE717B001FAEA8 /* MealDetailView.swift */; };
+		883945C62AAE718E001FAEA8 /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C52AAE718E001FAEA8 /* MealDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		883945A92AAD241E001FAEA8 /* MealsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsUseCase.swift; sourceTree = "<group>"; };
 		883945AD2AAD2611001FAEA8 /* MealsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRepository.swift; sourceTree = "<group>"; };
 		883945B02AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_TakeawayAppViewModel.swift; sourceTree = "<group>"; };
+		883945BD2AAE6FDF001FAEA8 /* NavigationStackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackService.swift; sourceTree = "<group>"; };
+		883945C02AAE70A0001FAEA8 /* MealDetailLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailLink.swift; sourceTree = "<group>"; };
+		883945C32AAE717B001FAEA8 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
+		883945C52AAE718E001FAEA8 /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,13 +132,13 @@
 		883945632AACE1DD001FAEA8 /* Fetch Takeaway */ = {
 			isa = PBXGroup;
 			children = (
+				883945BB2AAE6FA3001FAEA8 /* Service */,
 				883945AF2AAE6015001FAEA8 /* App */,
 				883945AC2AAD25FC001FAEA8 /* Repository */,
 				883945A82AAD2401001FAEA8 /* UseCase */,
 				883945A02AAD1AE6001FAEA8 /* Views */,
 				8839459D2AAD0D71001FAEA8 /* Models */,
 				883945942AACE6B7001FAEA8 /* Generalised  */,
-				8839458E2AACE21D001FAEA8 /* Network */,
 				883945682AACE1DE001FAEA8 /* Assets.xcassets */,
 				8839456A2AACE1DE001FAEA8 /* Preview Content */,
 			);
@@ -192,6 +200,7 @@
 		883945A02AAD1AE6001FAEA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				883945C22AAE7154001FAEA8 /* MealDetailView */,
 				883945A12AAD1BA6001FAEA8 /* MealListingView */,
 			);
 			path = Views;
@@ -229,6 +238,41 @@
 				883945B02AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		883945BB2AAE6FA3001FAEA8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				883945BC2AAE6FB6001FAEA8 /* Navigation */,
+				8839458E2AACE21D001FAEA8 /* Network */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		883945BC2AAE6FB6001FAEA8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				883945BF2AAE708C001FAEA8 /* Navlinks */,
+				883945BD2AAE6FDF001FAEA8 /* NavigationStackService.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		883945BF2AAE708C001FAEA8 /* Navlinks */ = {
+			isa = PBXGroup;
+			children = (
+				883945C02AAE70A0001FAEA8 /* MealDetailLink.swift */,
+			);
+			path = Navlinks;
+			sourceTree = "<group>";
+		};
+		883945C22AAE7154001FAEA8 /* MealDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				883945C32AAE717B001FAEA8 /* MealDetailView.swift */,
+				883945C52AAE718E001FAEA8 /* MealDetailViewModel.swift */,
+			);
+			path = MealDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,16 +418,20 @@
 			files = (
 				8839459F2AAD0D7F001FAEA8 /* MealsList.swift in Sources */,
 				883945902AACE292001FAEA8 /* HttpApiService.swift in Sources */,
+				883945C62AAE718E001FAEA8 /* MealDetailViewModel.swift in Sources */,
 				8839459A2AACED04001FAEA8 /* GeneralisedConstants.swift in Sources */,
+				883945C42AAE717B001FAEA8 /* MealDetailView.swift in Sources */,
 				883945982AACE8E7001FAEA8 /* GeneralisedLogger.swift in Sources */,
 				883945B12AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift in Sources */,
 				883945962AACE6DE001FAEA8 /* GeneralisedErrors.swift in Sources */,
+				883945BE2AAE6FDF001FAEA8 /* NavigationStackService.swift in Sources */,
 				8839459C2AACF9BC001FAEA8 /* GeneralisedRequest.swift in Sources */,
 				883945652AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift in Sources */,
 				883945AA2AAD241E001FAEA8 /* MealsUseCase.swift in Sources */,
 				883945A52AAD1BF7001FAEA8 /* MealListView.swift in Sources */,
 				883945AE2AAD2611001FAEA8 /* MealsRepository.swift in Sources */,
 				883945A72AAD1C09001FAEA8 /* MealListViewModel.swift in Sources */,
+				883945C12AAE70A0001FAEA8 /* MealDetailLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
