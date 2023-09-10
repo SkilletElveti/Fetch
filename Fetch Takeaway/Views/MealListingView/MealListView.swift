@@ -49,9 +49,13 @@ struct MealListView: View {
                    let meal = mealContainer.meals,
                    let mealUrlStr = meal[item].strMealThumb,
                    let mealUrl = URL(string: mealUrlStr),
-                   let mealName = meal[item].strMeal
-                {
+                   let mealName = meal[item].strMeal {
                     imageContainer(meal: mealName, mealLink: mealUrl)
+                        .onTapGesture {
+                            viewModel.redirectTo(
+                                meal: meal[item].idMeal ?? ""
+                            )
+                        }
                 }
             }
         }

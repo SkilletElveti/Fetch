@@ -11,6 +11,7 @@ struct MealState {
     var meals: Meals?
 }
 
+// MARK: - MealListViewModel Implementation
 class MealListViewModel: ObservableObject {
     @Published
     var state: MealState?
@@ -20,11 +21,18 @@ class MealListViewModel: ObservableObject {
     
     func _get(meals identifier: String) async throws {
         if state?.meals == nil {
-            Task.detached {@MainActor [weak self] in
+            Task.detached {
+                @MainActor [weak self] in
                 guard let self else { return }
                 self.state?.meals = Meals(meals: try await MealsRepository.shared.get(meals: identifier))
             }
         }
+    }
+    
+    func _redirectTo(meal identifier: String) async throws {
+        GeneralisedLogger.log(
+            message: "Redirecting to meal details: \(identifier)", filter: "MealListViewModel"
+        )
     }
 }
 
@@ -35,9 +43,19 @@ extension MealListViewModel {
             do {
                 try await self._get(meals: identifier)
             } catch {
-                GeneralisedLogger.log(error: "Error in getting meals for: \(identifier)")
+                GeneralisedLogger.log(error: "Error in getting meals for: \(identifier)", filter: "MealListViewModel")
             }
         }
-        
+    }
+    
+    func redirectTo(meal identifier: String) {
+        Task {
+            do {
+                try await _redirectTo(meal: identifier)
+            } catch {
+                GeneralisedLogger.log(error: "Error in getting meal details for: \(identifier)", filter: "MealListViewModel")
+
+            }
+        }
     }
 }
