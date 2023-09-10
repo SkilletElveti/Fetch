@@ -19,7 +19,12 @@ class MealListViewModel: ObservableObject {
     }
     
     func _get(meals identifier: String) async throws {
-        try await MealsRepository
+        if state?.meals == nil {
+            Task.detached {@MainActor [weak self] in
+                guard let self else { return }
+                self.state?.meals = Meals(meals: try await MealsRepository.shared.get(meals: identifier))
+            }
+        }
     }
 }
 
@@ -30,7 +35,7 @@ extension MealListViewModel {
             do {
                 try await self._get(meals: identifier)
             } catch {
-                
+                GeneralisedLogger.log(error: "Error in getting meals for: \(identifier)")
             }
         }
         

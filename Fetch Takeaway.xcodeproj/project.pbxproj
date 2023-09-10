@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		883945652AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945642AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift */; };
-		883945672AACE1DD001FAEA8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945662AACE1DD001FAEA8 /* ContentView.swift */; };
 		883945692AACE1DE001FAEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883945682AACE1DE001FAEA8 /* Assets.xcassets */; };
 		8839456C2AACE1DE001FAEA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8839456B2AACE1DE001FAEA8 /* Preview Assets.xcassets */; };
 		883945762AACE1DE001FAEA8 /* Fetch_TakeawayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945752AACE1DE001FAEA8 /* Fetch_TakeawayTests.swift */; };
@@ -25,6 +24,11 @@
 		883945A72AAD1C09001FAEA8 /* MealListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945A62AAD1C09001FAEA8 /* MealListViewModel.swift */; };
 		883945AA2AAD241E001FAEA8 /* MealsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945A92AAD241E001FAEA8 /* MealsUseCase.swift */; };
 		883945AE2AAD2611001FAEA8 /* MealsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945AD2AAD2611001FAEA8 /* MealsRepository.swift */; };
+		883945B12AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945B02AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift */; };
+		883945B42AAE60E4001FAEA8 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 883945B32AAE60E4001FAEA8 /* Nuke */; };
+		883945B62AAE60E4001FAEA8 /* NukeExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 883945B52AAE60E4001FAEA8 /* NukeExtensions */; };
+		883945B82AAE60E4001FAEA8 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 883945B72AAE60E4001FAEA8 /* NukeUI */; };
+		883945BA2AAE60E4001FAEA8 /* NukeVideo in Frameworks */ = {isa = PBXBuildFile; productRef = 883945B92AAE60E4001FAEA8 /* NukeVideo */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +51,6 @@
 /* Begin PBXFileReference section */
 		883945612AACE1DD001FAEA8 /* Fetch Takeaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch Takeaway.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		883945642AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_TakeawayApp.swift; sourceTree = "<group>"; };
-		883945662AACE1DD001FAEA8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		883945682AACE1DE001FAEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8839456B2AACE1DE001FAEA8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		883945712AACE1DE001FAEA8 /* Fetch TakeawayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fetch TakeawayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +68,7 @@
 		883945A62AAD1C09001FAEA8 /* MealListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewModel.swift; sourceTree = "<group>"; };
 		883945A92AAD241E001FAEA8 /* MealsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsUseCase.swift; sourceTree = "<group>"; };
 		883945AD2AAD2611001FAEA8 /* MealsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsRepository.swift; sourceTree = "<group>"; };
+		883945B02AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_TakeawayAppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				883945932AACE3EB001FAEA8 /* Reachability in Frameworks */,
+				883945B42AAE60E4001FAEA8 /* Nuke in Frameworks */,
+				883945BA2AAE60E4001FAEA8 /* NukeVideo in Frameworks */,
+				883945B62AAE60E4001FAEA8 /* NukeExtensions in Frameworks */,
+				883945B82AAE60E4001FAEA8 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,13 +124,13 @@
 		883945632AACE1DD001FAEA8 /* Fetch Takeaway */ = {
 			isa = PBXGroup;
 			children = (
+				883945AF2AAE6015001FAEA8 /* App */,
 				883945AC2AAD25FC001FAEA8 /* Repository */,
 				883945A82AAD2401001FAEA8 /* UseCase */,
 				883945A02AAD1AE6001FAEA8 /* Views */,
 				8839459D2AAD0D71001FAEA8 /* Models */,
 				883945942AACE6B7001FAEA8 /* Generalised  */,
 				8839458E2AACE21D001FAEA8 /* Network */,
-				883945642AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift */,
 				883945682AACE1DE001FAEA8 /* Assets.xcassets */,
 				8839456A2AACE1DE001FAEA8 /* Preview Content */,
 			);
@@ -185,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				883945A12AAD1BA6001FAEA8 /* MealListingView */,
-				883945662AACE1DD001FAEA8 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +222,15 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		883945AF2AAE6015001FAEA8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				883945642AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift */,
+				883945B02AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +249,10 @@
 			name = "Fetch Takeaway";
 			packageProductDependencies = (
 				883945922AACE3EB001FAEA8 /* Reachability */,
+				883945B32AAE60E4001FAEA8 /* Nuke */,
+				883945B52AAE60E4001FAEA8 /* NukeExtensions */,
+				883945B72AAE60E4001FAEA8 /* NukeUI */,
+				883945B92AAE60E4001FAEA8 /* NukeVideo */,
 			);
 			productName = "Fetch Takeaway";
 			productReference = 883945612AACE1DD001FAEA8 /* Fetch Takeaway.app */;
@@ -308,6 +328,7 @@
 			mainGroup = 883945582AACE1DD001FAEA8;
 			packageReferences = (
 				883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */,
+				883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 883945622AACE1DD001FAEA8 /* Products */;
 			projectDirPath = "";
@@ -354,8 +375,8 @@
 				8839459F2AAD0D7F001FAEA8 /* MealsList.swift in Sources */,
 				883945902AACE292001FAEA8 /* HttpApiService.swift in Sources */,
 				8839459A2AACED04001FAEA8 /* GeneralisedConstants.swift in Sources */,
-				883945672AACE1DD001FAEA8 /* ContentView.swift in Sources */,
 				883945982AACE8E7001FAEA8 /* GeneralisedLogger.swift in Sources */,
+				883945B12AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift in Sources */,
 				883945962AACE6DE001FAEA8 /* GeneralisedErrors.swift in Sources */,
 				8839459C2AACF9BC001FAEA8 /* GeneralisedRequest.swift in Sources */,
 				883945652AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift in Sources */,
@@ -697,6 +718,14 @@
 				kind = branch;
 			};
 		};
+		883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -704,6 +733,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
+		};
+		883945B32AAE60E4001FAEA8 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		883945B52AAE60E4001FAEA8 /* NukeExtensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeExtensions;
+		};
+		883945B72AAE60E4001FAEA8 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
+		883945B92AAE60E4001FAEA8 /* NukeVideo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeVideo;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
