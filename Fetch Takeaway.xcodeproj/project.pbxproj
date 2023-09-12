@@ -37,6 +37,8 @@
 		883945CA2AAE781F001FAEA8 /* MealDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945C92AAE781F001FAEA8 /* MealDetailInfo.swift */; };
 		883945CC2AAE7999001FAEA8 /* MealLookupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945CB2AAE7999001FAEA8 /* MealLookupRepository.swift */; };
 		883945D12AAE7D09001FAEA8 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 883945D02AAE7D09001FAEA8 /* YouTubePlayerKit */; };
+		883945D32AB008E4001FAEA8 /* GeneralisedYTPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945D22AB008E4001FAEA8 /* GeneralisedYTPlayer.swift */; };
+		883945D72AB00F19001FAEA8 /* MealExtracted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945D62AB00F19001FAEA8 /* MealExtracted.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,10 @@
 		883945C72AAE7642001FAEA8 /* MealLookupUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLookupUseCase.swift; sourceTree = "<group>"; };
 		883945C92AAE781F001FAEA8 /* MealDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailInfo.swift; sourceTree = "<group>"; };
 		883945CB2AAE7999001FAEA8 /* MealLookupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealLookupRepository.swift; sourceTree = "<group>"; };
+		883945D22AB008E4001FAEA8 /* GeneralisedYTPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralisedYTPlayer.swift; sourceTree = "<group>"; };
+		883945D42AB00B4A001FAEA8 /* Fetch-Takeaway-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Fetch-Takeaway-Info.plist"; sourceTree = SOURCE_ROOT; };
+		883945D52AB00B79001FAEA8 /* Fetch Takeaway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Fetch Takeaway.entitlements"; sourceTree = "<group>"; };
+		883945D62AB00F19001FAEA8 /* MealExtracted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealExtracted.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,8 @@
 		883945632AACE1DD001FAEA8 /* Fetch Takeaway */ = {
 			isa = PBXGroup;
 			children = (
+				883945D52AB00B79001FAEA8 /* Fetch Takeaway.entitlements */,
+				883945D42AB00B4A001FAEA8 /* Fetch-Takeaway-Info.plist */,
 				883945BB2AAE6FA3001FAEA8 /* Service */,
 				883945AF2AAE6015001FAEA8 /* App */,
 				883945AC2AAD25FC001FAEA8 /* Repository */,
@@ -193,6 +201,7 @@
 				883945972AACE8E7001FAEA8 /* GeneralisedLogger.swift */,
 				883945992AACED04001FAEA8 /* GeneralisedConstants.swift */,
 				8839459B2AACF9BC001FAEA8 /* GeneralisedRequest.swift */,
+				883945D22AB008E4001FAEA8 /* GeneralisedYTPlayer.swift */,
 			);
 			path = "Generalised ";
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 			children = (
 				8839459E2AAD0D7F001FAEA8 /* MealsList.swift */,
 				883945C92AAE781F001FAEA8 /* MealDetailInfo.swift */,
+				883945D62AB00F19001FAEA8 /* MealExtracted.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -432,12 +442,14 @@
 				883945CC2AAE7999001FAEA8 /* MealLookupRepository.swift in Sources */,
 				8839459F2AAD0D7F001FAEA8 /* MealsList.swift in Sources */,
 				883945902AACE292001FAEA8 /* HttpApiService.swift in Sources */,
+				883945D72AB00F19001FAEA8 /* MealExtracted.swift in Sources */,
 				883945C62AAE718E001FAEA8 /* MealDetailViewModel.swift in Sources */,
 				8839459A2AACED04001FAEA8 /* GeneralisedConstants.swift in Sources */,
 				883945C42AAE717B001FAEA8 /* MealDetailView.swift in Sources */,
 				883945982AACE8E7001FAEA8 /* GeneralisedLogger.swift in Sources */,
 				883945B12AAE6031001FAEA8 /* Fetch_TakeawayAppViewModel.swift in Sources */,
 				883945962AACE6DE001FAEA8 /* GeneralisedErrors.swift in Sources */,
+				883945D32AB008E4001FAEA8 /* GeneralisedYTPlayer.swift in Sources */,
 				883945BE2AAE6FDF001FAEA8 /* NavigationStackService.swift in Sources */,
 				8839459C2AACF9BC001FAEA8 /* GeneralisedRequest.swift in Sources */,
 				883945652AACE1DD001FAEA8 /* Fetch_TakeawayApp.swift in Sources */,
@@ -603,12 +615,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Fetch Takeaway/Fetch Takeaway.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fetch Takeaway/Preview Content\"";
 				DEVELOPMENT_TEAM = YHL6YP9PRW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fetch-Takeaway-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -632,12 +646,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Fetch Takeaway/Fetch Takeaway.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Fetch Takeaway/Preview Content\"";
 				DEVELOPMENT_TEAM = YHL6YP9PRW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Fetch-Takeaway-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

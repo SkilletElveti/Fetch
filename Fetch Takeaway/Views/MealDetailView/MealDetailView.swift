@@ -22,6 +22,17 @@ struct MealDetailView: View {
     var body: some View {
         content
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarRole(.editor)
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    HStack {
+                        youtubeLink
+                        Spacer()
+                            
+                        sourceLink
+                    }
+                })
+            })
             .onAppear {
                 Task {
                     try await viewModel.fetchMealDetail()
@@ -38,6 +49,132 @@ struct MealDetailView: View {
                     name: detail.strMeal,
                     category: detail.strCategory
                 )
+                ingredientsTable()
+                instructions(text: detail.strInstructions)
+                Spacer()
+            }
+        }
+    }
+}
+
+//MARK: - Instruction View
+extension MealDetailView {
+    @ViewBuilder
+    func instructions(text: String?) -> some View {
+        
+        if let text {
+            
+            Text(text)
+                .foregroundColor(.black)
+                .padding([.top,.bottom,.leading], 12)
+        }
+    }
+}
+
+//MARK: - Ingredients
+extension MealDetailView {
+   
+    func ingredientsTable() -> some View {
+            VStack {
+                HStack {
+                    Text("Ingredients:")
+                        .foregroundColor(.black)
+                        .font(.title2)
+                        .fontWeight(.medium)
+                        .padding(.bottom,4)
+                    Spacer()
+                }
+                
+                ForEach(viewModel.state.ingrdients , id: \.self) { meal in
+                HStack {
+                    HStack {
+                        Text(meal.ingredient ?? "")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Text(meal.measure ?? "")
+                        Spacer()
+                    }
+                    
+                }
+            }
+            }.padding([.top,.bottom,.leading],12)
+    }
+    
+    func ingredientsView(meal: MealDetails) -> some View {
+        VStack {
+            HStack {
+                Text("Ingrdients:")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                Spacer()
+            }.padding(.bottom,4)
+            unwrapped(str: viewModel.state.ingredients)
+        }.padding(.all,12)
+    }
+    
+    @ViewBuilder
+    func unwrapped(str: String?) -> some View {
+        if let str {
+            HStack {
+                Text(str)
+                Spacer()
+            }
+        }
+    }
+}
+
+//MARK: - Measure View
+extension MealDetailView {
+    @ViewBuilder
+    var sourceLink: some View {
+        if let source = viewModel.state.mealDetail?.strSource,
+        let url = URL(string: source) {
+            Link(destination: url) {
+                Image(systemName: "link")
+                    .font(.system(size: 15))
+                    .fontWidth(.standard)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var youtubeLink: some View {
+        if let source = viewModel.state.mealDetail?.strYoutube,
+        let url = URL(string: source) {
+            Link(destination: url) {
+                Image(systemName: "video.and.waveform")
+                    .font(.system(size: 15))
+                    .fontWidth(.standard)
+            }
+        }
+    }
+}
+
+
+//MARK: - Header Views
+extension MealDetailView {
+    @ViewBuilder
+    func headerRow(
+        text: String,
+        font: Font,
+        weight: Font.Weight,
+        useBottom: Bool = false,
+        bottom: CGFloat = 5,
+        useLeading: Bool = false,
+        leading: CGFloat = 12,
+        trailingSpacer: Bool = true
+    ) -> some View {
+        HStack {
+            Text(text)
+                .font(font)
+                .fontWeight(weight)
+                .padding(.bottom, useBottom ? bottom : 0)
+                .padding(.leading, useLeading ? leading : 0)
+                .foregroundColor(.white)
+            if trailingSpacer {
                 Spacer()
             }
         }
@@ -66,30 +203,29 @@ struct MealDetailView: View {
                             gradient
                                 .frame(height: category != nil ? 220 : 150)
                             VStack {
-                                HStack {
-                                    Text(name)
-                                        .font(.largeTitle)
-                                        .fontWeight(.medium)
-                                        .foregroundColor(.white)
-                                        .padding(.leading,10)
-                                    Spacer()
-                                }
+                                headerRow(
+                                    text: name,
+                                    font: .largeTitle,
+                                    weight: .medium,
+                                    useLeading: true,
+                                    leading: 10,
+                                    trailingSpacer: true
+                                )
+                                
                                 if let category {
-                                    HStack {
-                                        Text(category)
-                                            .font(.headline)
-                                            .fontWeight(.medium)
-                                            .foregroundColor(.white)
-                                            .padding(.leading,10)
-                                            .padding(.bottom,5)
-                                        Spacer()
-                                    }
+                                    headerRow(
+                                        text: category,
+                                        font: .headline,
+                                        weight: .medium,
+                                        useBottom: true,
+                                        bottom: 5,
+                                        useLeading: true,
+                                        leading: 10
+                                    )
                                 }
                             }
                         }
-                        
                     }
-                  
                 }
             }
         }
