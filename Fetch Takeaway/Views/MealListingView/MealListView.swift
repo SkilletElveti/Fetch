@@ -23,12 +23,23 @@ struct MealListView: View {
         startPoint: .bottom,
         endPoint: .top
     )
+   
     var body: some View {
         content
             .onAppear(perform: {
                 viewModel.get(meals: "Dessert")
             })
             .toolbarRole(.navigationStack)
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image(systemName: "list.bullet.indent")
+                        .font(.system(size: 15))
+                        .fontWeight(.medium)
+                        .onTapGesture {
+                            viewModel.sort()
+                        }
+                }
+            })
             .navigationBarTitleDisplayMode(.large)
             .navigationTitle(Constants.MealsViewTitle.rawValue)
     }
@@ -45,8 +56,8 @@ struct MealListView: View {
         LazyVGrid(columns: girdItem, spacing: 15) {
             ForEach(0 ..< (viewModel.state?.meals?.meals?.count ?? 0), id: \.self) {
                 item in
-                if let mealContainer = viewModel.state?.meals,
-                   let meal = mealContainer.meals,
+                if 
+                   let meal = viewModel.state?.list,
                    let mealUrlStr = meal[item].strMealThumb,
                    let mealUrl = URL(string: mealUrlStr),
                    let mealName = meal[item].strMeal {

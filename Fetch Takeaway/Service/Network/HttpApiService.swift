@@ -35,12 +35,10 @@ extension HttpApiService {
     private func initializeReachibility() throws {
         self.reachibilityObserver = try Reachability()
         guard let reachibilityObserver else { throw GeneralisedError.notFound }
-        reachibilityObserver.whenUnreachable = { [weak self] _ in
-            guard let self else { return }
+        reachibilityObserver.whenReachable = {  _ in
             self.networkPublisher.send(false)
         }
-        reachibilityObserver.whenUnreachable = { [weak self] _ in
-            guard let self else { return }
+        reachibilityObserver.whenUnreachable = { _ in
             self.networkPublisher.send(true)
         }
     }

@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 /// ViewModel for MealListView
 struct MealState {
     var meals: Meals?
+    var list: [MealList] = []
 }
 
 // MARK: - MealListViewModel Implementation
@@ -18,13 +20,17 @@ class MealListViewModel: ObservableObject {
     init() {
         state = MealState()
     }
-    
+    private var sortFlag: Bool = false
     func _get(meals identifier: String) async throws {
         if state?.meals == nil {
             Task.detached {
                 @MainActor [weak self] in
                 guard let self else { return }
                 self.state?.meals = Meals(meals: try await MealsRepository.shared.get(meals: identifier))
+                self.state?.list = self.state?.meals?.meals ?? []
+                self.state?.list.sort(by: {
+                    $0.strMeal ?? "" < $1.strMeal ?? ""
+                })
             }
         }
     }
@@ -36,6 +42,24 @@ class MealListViewModel: ObservableObject {
         GeneralisedLogger.log(
             message: "Redirecting to meal details: \(identifier)", filter: "MealListViewModel"
         )
+    }
+    
+    private func _sort() {
+        var list = state?.meals?.meals
+        if sortFlag {
+            list?.sort(by: {
+                ($0.strMeal ?? "") < ($1.strMeal ?? "")
+            })
+        } else {
+            list?.sort(by: {
+                ($0.strMeal ?? "") > ($1.strMeal ?? "")
+            })
+        }
+        sortFlag = !sortFlag
+        withAnimation {
+            state?.list = list ?? []
+        }
+        
     }
 }
 
@@ -57,8 +81,11 @@ extension MealListViewModel {
                 try await _redirectTo(meal: identifier)
             } catch {
                 GeneralisedLogger.log(error: "Error in getting meal details for: \(identifier)", filter: "MealListViewModel")
-
             }
         }
+    }
+    
+    func sort() {
+        self._sort()
     }
 }
