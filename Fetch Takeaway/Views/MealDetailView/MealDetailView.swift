@@ -28,7 +28,6 @@ struct MealDetailView: View {
                     HStack {
                         youtubeLink
                         Spacer()
-                            
                         sourceLink
                     }
                 })

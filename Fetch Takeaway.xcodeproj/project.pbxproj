@@ -14,7 +14,6 @@
 		883945802AACE1DE001FAEA8 /* Fetch_TakeawayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839457F2AACE1DE001FAEA8 /* Fetch_TakeawayUITests.swift */; };
 		883945822AACE1DE001FAEA8 /* Fetch_TakeawayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945812AACE1DE001FAEA8 /* Fetch_TakeawayUITestsLaunchTests.swift */; };
 		883945902AACE292001FAEA8 /* HttpApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839458F2AACE292001FAEA8 /* HttpApiService.swift */; };
-		883945932AACE3EB001FAEA8 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 883945922AACE3EB001FAEA8 /* Reachability */; };
 		883945962AACE6DE001FAEA8 /* GeneralisedErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945952AACE6DD001FAEA8 /* GeneralisedErrors.swift */; };
 		883945982AACE8E7001FAEA8 /* GeneralisedLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945972AACE8E7001FAEA8 /* GeneralisedLogger.swift */; };
 		8839459A2AACED04001FAEA8 /* GeneralisedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945992AACED04001FAEA8 /* GeneralisedConstants.swift */; };
@@ -40,6 +39,7 @@
 		883945D32AB008E4001FAEA8 /* GeneralisedYTPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945D22AB008E4001FAEA8 /* GeneralisedYTPlayer.swift */; };
 		883945D72AB00F19001FAEA8 /* MealExtracted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883945D62AB00F19001FAEA8 /* MealExtracted.swift */; };
 		883945DA2AB02190001FAEA8 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 883945D92AB02190001FAEA8 /* AlertToast */; };
+		883E17D52AB2ABB000240394 /* Hyperconnectivity in Frameworks */ = {isa = PBXBuildFile; productRef = 883E17D42AB2ABB000240394 /* Hyperconnectivity */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883945932AACE3EB001FAEA8 /* Reachability in Frameworks */,
+				883E17D52AB2ABB000240394 /* Hyperconnectivity in Frameworks */,
 				883945DA2AB02190001FAEA8 /* AlertToast in Frameworks */,
 				883945B42AAE60E4001FAEA8 /* Nuke in Frameworks */,
 				883945D12AAE7D09001FAEA8 /* YouTubePlayerKit in Frameworks */,
@@ -315,13 +315,13 @@
 			);
 			name = "Fetch Takeaway";
 			packageProductDependencies = (
-				883945922AACE3EB001FAEA8 /* Reachability */,
 				883945B32AAE60E4001FAEA8 /* Nuke */,
 				883945B52AAE60E4001FAEA8 /* NukeExtensions */,
 				883945B72AAE60E4001FAEA8 /* NukeUI */,
 				883945B92AAE60E4001FAEA8 /* NukeVideo */,
 				883945D02AAE7D09001FAEA8 /* YouTubePlayerKit */,
 				883945D92AB02190001FAEA8 /* AlertToast */,
+				883E17D42AB2ABB000240394 /* Hyperconnectivity */,
 			);
 			productName = "Fetch Takeaway";
 			productReference = 883945612AACE1DD001FAEA8 /* Fetch Takeaway.app */;
@@ -396,10 +396,10 @@
 			);
 			mainGroup = 883945582AACE1DD001FAEA8;
 			packageReferences = (
-				883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */,
 				883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */,
 				883945CF2AAE7D09001FAEA8 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 				883945D82AB02190001FAEA8 /* XCRemoteSwiftPackageReference "AlertToast" */,
+				883E17D32AB2ABB000240394 /* XCRemoteSwiftPackageReference "hyperconnectivity" */,
 			);
 			productRefGroup = 883945622AACE1DD001FAEA8 /* Products */;
 			projectDirPath = "";
@@ -794,14 +794,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke";
@@ -826,14 +818,17 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		883E17D32AB2ABB000240394 /* XCRemoteSwiftPackageReference "hyperconnectivity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rwbutler/hyperconnectivity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		883945922AACE3EB001FAEA8 /* Reachability */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 883945912AACE3EB001FAEA8 /* XCRemoteSwiftPackageReference "Reachability" */;
-			productName = Reachability;
-		};
 		883945B32AAE60E4001FAEA8 /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 883945B22AAE60E4001FAEA8 /* XCRemoteSwiftPackageReference "Nuke" */;
@@ -863,6 +858,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 883945D82AB02190001FAEA8 /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
+		};
+		883E17D42AB2ABB000240394 /* Hyperconnectivity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 883E17D32AB2ABB000240394 /* XCRemoteSwiftPackageReference "hyperconnectivity" */;
+			productName = Hyperconnectivity;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

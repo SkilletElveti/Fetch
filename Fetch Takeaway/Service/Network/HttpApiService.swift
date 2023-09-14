@@ -7,17 +7,18 @@
 
 import Foundation
 import Combine
-import Reachability
+
 import OSLog
+import Hyperconnectivity
 /// Network Layer
 /// Responsible to perform networking requests, has a built in reachibility component which manages no network scenarios.
 /// - Note : This Layer does not perform Auth or Token Management.
 /// - Parameter `networkPublisher`: Observe this to inform the view layer that network is not available, set value implies no network is available.
 class HttpApiService: ObservableObject {
     static let shared = HttpApiService()
-    private var reachibilityObserver: Reachability?
-    private var isNetworkAvailable: Bool = true
     
+    private var isNetworkAvailable: Bool = true
+    private var sub: Set<AnyCancellable> = []
     var networkPublisher: CurrentValueSubject<Bool,Never> = .init(false)
     private init() {
         do {
@@ -33,14 +34,13 @@ class HttpApiService: ObservableObject {
 /// Network connectivity abstarction, coupled with network layer. Will be called once in the init block of HttpApiService class
 extension HttpApiService {
     private func initializeReachibility() throws {
-        self.reachibilityObserver = try Reachability()
-        guard let reachibilityObserver else { throw GeneralisedError.notFound }
-        reachibilityObserver.whenReachable = {  _ in
-            self.networkPublisher.send(false)
-        }
-        reachibilityObserver.whenUnreachable = { _ in
-            self.networkPublisher.send(true)
-        }
+        Hyperconnectivity.Publisher().receive(on: DispatchQueue.main).sink { [weak self] result in
+            if result.isConnected {
+                self?.networkPublisher.send(false)
+            } else {
+                self?.networkPublisher.send(true)
+            }
+        }.store(in: &sub)
     }
 }
 
